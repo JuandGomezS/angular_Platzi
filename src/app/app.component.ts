@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fundamentals';
+  name = 'Juan';
+  buttonDisabled = false;
+  inputValue = 'Initial value';
+  progressValue = 19;
+
+  onClick() {
+    console.log('click');
+  }
+
+  onInput(event: any) {
+    const element = event.target as HTMLInputElement;
+    this.name = element.value;
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
 }
