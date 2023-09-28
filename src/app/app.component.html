@@ -1,31 +1,68 @@
-<h1>Hola mundo</h1>
+
+
+<h1>String interpolation</h1>
 <h2>{{'Hola mundo '.repeat(2)}}</h2>
 <p>{{name}}</p>  
-<!-- Interpolación de propiedades -->
 <hr>
 
+
+<h1>Property binding</h1>
 <!-- Property binding: manipula propiedades nativas de html desde Typescript [property] = "valueFromTS" -->
 <button [disabled]="buttonDisabled">Enviar</button>
 <input type="text" [value]="inputValue">
 <progress max="100" [value]="progressValue"></progress>
 <hr>
 
+<h1>Eventos</h1>
 <!-- Event binding: manipula eventos nativos de html desde Typescript (event)="functionFromTS()" -->
 <!-- Click Event -->
 <button (click)="onClick()">Enviar</button>
 
-<!-- Input Event -->
+<!-- *Input Event* -->
 <p>Nombre: </p>
 <input type="text" (input)="onInput($event)"> <!-- $event forma nativa de enviar eventos a TS -->
 
-<!-- Scroll Event-->
+<!-- *Scroll Event* -->
 <div class="box" (scroll)="onScroll($event)"> 
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis facere dignissimos nisi facilis! Labore, numquam expedita itaque obcaecati adipisci quae sunt, praesentium necessitatibus minus illo ab saepe, hic delectus iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet enim porro aperiam, eos aspernatur eius adipisci voluptatum veniam fuga est rem odio illum quae voluptatibus. Atque quasi accusamus recusandae obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 </div>
 
 <hr>
 
-<!-- ngModel: valida el valor de name sin necesidad de crear un metodo que se escuche en un evento-->
+<h1>*ngModel</h1>
+<!-- *ngModel: valida el valor de name sin necesidad de crear un metodo que se escuche en un evento-->
 <input type="text" required #nameInput="ngModel" [(ngModel)]="name">
 <p>Valid: {{nameInput.valid}}</p>
 
+<!-- ----------------------------------- *Estructuras de control*------------------------------------------ -->
+
+
+<!-- *ngIf: muestra o no un elemento en el DOM -->
+<h1>*ngIf</h1>
+<p *ngIf="name === 'David'; else otroP">My content</p>
+
+<ng-template #otroP>
+  <p>Prueba Else</p>
+</ng-template>
+
+<!-- *ngFor: itera sobre un array y muestra cada elemento en el DOM -->
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName">
+<button (click)="addName()">Agregar</button>
+<ul>
+  <li *ngIf="names.length === 0 ">Lista vacía</li>
+  <li *ngFor="let name of names; index as i"> <!-- index as i o let i = index: muestra el indice de cada elemento -->
+    {{name}} - {{i}}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+
+<!-- Array de productos -->
+
+<div>
+  <div *ngFor="let product of products" id="card">
+    <h1>Imagen: {{product.image}}</h1>
+    <h3> $ {{product.price}}</h3>
+    <p>{{product.name}}</p>
+  </div>
+</div>
