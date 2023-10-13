@@ -17,33 +17,33 @@ export class AppComponent {
     {
       name: 'EL mejor juguete',
       price: 565,
-      image: './assets/images/toy.jpg',
+      image: './assets/images/product.png',
       category: 'all',
     },
     {
       name: 'Bicicleta casi nueva',
       price: 356,
-      image: './assets/images/bike.jpg'
+      image: './assets/images/product.png',
     },
     {
       name: 'Colleción de albumnes',
       price: 34,
-      image: './assets/images/album.jpg'
+      image: './assets/images/product.png',
     },
     {
       name: 'Mis libros',
       price: 23,
-      image: './assets/images/books.jpg'
+      image: './assets/images/product.png',
     },
     {
       name: 'Casa para perro',
       price: 34,
-      image: './assets/images/house.jpg'
+      image: '../assets/images/product.png',
     },
     {
       name: 'Gafas',
       price: 3434,
-      image: './assets/images/glasses.jpg'
+      image: '../assets/images/product.png',
     }
   ];
 

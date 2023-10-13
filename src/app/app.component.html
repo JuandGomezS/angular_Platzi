@@ -59,10 +59,22 @@
 
 <!-- Array de productos -->
 
-<div>
+<div class="productsGrid">
   <div *ngFor="let product of products" id="card">
-    <h1>Imagen: {{product.image}}</h1>
+    <img width="250px" [src]="product.image">
     <h3> $ {{product.price}}</h3>
     <p>{{product.name}}</p>
   </div>
 </div>
+
+<!-- *ngSwitch  -->
+<h1>[]ngSwitch</h1>
+
+<div [ngSwitch]="name">
+  <p *ngSwitchCase="'David'">Hola David</p>
+  <p *ngSwitchCase="'Juan'">Hola Juan</p>
+  <p *ngSwitchCase="'Pedro'">Hola Pedro</p>
+  <p *ngSwitchDefault>Hola desconocido</p>
+</div>
+
+<!-- Hasta acá se manejaron estructuras de control de HTML para angular -->

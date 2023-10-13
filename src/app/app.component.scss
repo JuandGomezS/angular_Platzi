@@ -5,6 +5,26 @@
     background-color: aqua;
 }
 
-#card {
-    border: 1px solid black;
+.productsGrid {
+    display: flex;
+    flex-direction: column;
+    div {
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2, p {
+            margin: 0;
+        }
+    }
 }
+
+@media screen and (min-width: 40em) {
+    .productsGrid {
+        display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    }
+}
+
