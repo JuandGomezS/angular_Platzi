@@ -8,11 +8,25 @@ import { Product } from './product.model';
 })
 export class AppComponent {
   name = 'Juan';
+  name2= '';
   buttonDisabled = false;
   inputValue = 'Initial value';
   progressValue = 19;
   names = ['Juan', 'Pedro', 'Luis'];
   newName = '';
+
+  register={
+    name: '',
+    password: '',
+    email: ''
+  };
+
+  box ={
+    width: 100,
+    height: 100,
+    background: 'red'
+  };
+
   products: Product[] = [
     {
       name: 'EL mejor juguete',
@@ -68,5 +82,9 @@ export class AppComponent {
 
   deleteName(index: number){    
     this.names.splice(index, 1);
+  }
+
+  onRegister(){
+    console.log(this.register);
   }
 }
